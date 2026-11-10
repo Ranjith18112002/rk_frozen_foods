@@ -2,25 +2,194 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #111111;
+  --brand-green: #65c92e;
+  --brand-green-hover: #55b525;
+  --brand-black: #111111;
+  --brand-light: #f7faf5;
+  --text-grey: #555555;
+  --border: #e5e7eb;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --color-brand-green: var(--brand-green);
+  --color-brand-green-hover: var(--brand-green-hover);
+  --color-brand-black: var(--brand-black);
+  --color-brand-light: var(--brand-light);
+  --color-brand-border: var(--border);
+  --color-brand-grey: var(--text-grey);
+  --color-brand-navy: var(--brand-black);
+  --color-brand-ice: var(--brand-light);
+  --color-brand-orange: var(--brand-green);
+  --color-brand-orange-hover: var(--brand-green-hover);
+  --color-brand-text: var(--text-grey);
+  --font-sans: var(--font-poppins);
   --font-mono: var(--font-geist-mono);
+  --font-weight-bold: 500;
+  --font-weight-extrabold: 500;
+  --font-weight-black: 500;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
 }
 
 body {
+  min-width: 320px;
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-poppins), Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.65;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-poppins), Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: 30px;
+  line-height: 1.3;
+}
+
+h2 {
+  font-size: 24px;
+  line-height: 1.35;
+}
+
+h3 {
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+b,
+strong {
+  font-weight: 600;
+}
+
+main .bg-brand-navy :is(h1, h2, h3, h4) {
+  color: #ffffff;
+}
+
+main .bg-brand-navy h1 span {
+  color: var(--brand-light);
+}
+
+.bg-brand-orange {
+  color: var(--brand-black);
+}
+
+.bg-brand-orange-hover {
+  color: var(--brand-black);
+}
+
+.group:hover [class~="group-hover:bg-brand-orange"] {
+  color: var(--brand-black);
+}
+
+main input:not([type="checkbox"]):not([type="radio"]),
+main select,
+main textarea {
+  background-color: #ffffff;
+  color: var(--brand-black);
+}
+
+:is(a, button, input, select, textarea):focus-visible {
+  outline: 3px solid rgb(101 201 46 / 55%);
+  outline-offset: 3px;
+}
+
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 600ms ease,
+    transform 600ms ease;
+}
+
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes hero-fade-in {
+  from {
+    opacity: 0;
+    transform: scale(1.015);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.hero-slide-image {
+  animation: hero-fade-in 700ms ease both;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(100vw);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 50s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .animate-marquee {
+    animation: none;
+    transform: none;
+  }
+
+  * ,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .reveal-on-scroll {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+
+@theme {
+  --animate-marquee: marquee 35s linear infinite;
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
 }

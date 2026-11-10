@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Samosas & Rolls",
+    "slug": "samosas-rolls",
+    "description": "Golden, savoury samosas and ready-to-cook rolls.",
+    "image": "/categories/samosas-rolls.jpg"
+  },
+  {
+    "name": "Kebabs & Tikkis",
+    "slug": "kebabs-tikkis",
+    "description": "Flavourful kebabs and crisp tikkis, ready for the pan.",
+    "image": "/categories/kebabs-tikkis.jpg"
+  },
+  {
+    "name": "Nuggets & Popcorn",
+    "slug": "nuggets-popcorn",
+    "description": "Crispy bite-sized favourites for every occasion.",
+    "image": "/categories/nuggets-popcorn.jpg"
+  },
+  {
+    "name": "Fries & Potato Snacks",
+    "slug": "fries-potato",
+    "description": "Easy-to-prepare fries and potato snacks.",
+    "image": "/categories/fries-potato.jpg"
+  },
+  {
+    "name": "Parathas & Breads",
+    "slug": "parathas-breads",
+    "description": "Convenient breads and parathas for quick meals.",
+    "image": "/categories/parathas-breads.jpg"
+  },
+  {
+    "name": "Momos & Dumplings",
+    "slug": "momos-dumplings",
+    "description": "Delicious dumplings, simply steam or pan-fry.",
+    "image": "/categories/momos-dumplings.jpg"
+  },
+  {
+    "name": "Burger Patties & Cutlets",
+    "slug": "patties-cutlets",
+    "description": "Tasty patties and cutlets for a quick bite.",
+    "image": "/categories/patties-cutlets.jpg"
+  },
+  {
+    "name": "Ready-to-Cook Meals",
+    "slug": "ready-to-cook",
+    "description": "Convenient frozen meals made easy to prepare.",
+    "image": "/categories/ready-to-cook.jpg"
+  }
+]
